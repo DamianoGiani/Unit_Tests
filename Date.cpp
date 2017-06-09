@@ -22,7 +22,7 @@ Date::~Date()
 
 void Date::setDate(int d, int m, int y)
 {
-do{
+    do{
         setDay(d);
     }while(!(d>0 && d<32));
     do{
@@ -32,7 +32,7 @@ do{
     }while(!(m>0 && m<13));
     do{
         setYear(y);
-            }while(!(y>1000 && y<9999));
+    }while(!(y>1000 && y<9999));
     return;
 }
 

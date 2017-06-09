@@ -9,7 +9,7 @@
 
 struct{
     bool operator()(List a, List b){
-        return a.getName_list()<b.getName_list();
+        return a.getNameList()<b.getNameList();
     }
 }Sorter_Name;
 
@@ -29,16 +29,16 @@ Home::~Home()
 void Home::addList(string name)
 {
     List new_List;
-    new_List.setName_list(name);
-    Vector_List.push_back(new_List);
+    new_List.setNameList(name);
+    Agenda.push_back(new_List);
 }
 
 void Home::deleteList(string name)
 {
     vector<List>::iterator i;
-    for(i= Vector_List.begin(); i!= Vector_List.end(); i++){
-        if(name==i->getName_list()){
-            Vector_List.erase(Vector_List.begin()-(i-Vector_List.begin()));
+    for(i= Agenda.begin(); i!= Agenda.end(); i++){
+        if(name==i->getNameList()){
+            Agenda.erase(Agenda.begin()-(i-Agenda.begin()));
             return;
         }else
             return;
@@ -50,15 +50,15 @@ void Home::deleteList(string name)
 List* Home::searchList(string name)
 {
     vector<List>::iterator i;
-    for(i=Vector_List.begin(); i!=Vector_List.end(); i++){
-        if(name==i-> getName_list()){
+    for(i=Agenda.begin(); i!=Agenda.end(); i++){
+        if(name==i-> getNameList()){
             return &(*i);
-                   }
+        }
     }
     return NULL;
 }
 
-void Home::orderList_name()
+void Home::orderListName()
 {
-    std::sort(Vector_List.begin(), Vector_List.end(), Sorter_Name);
+    std::sort(Agenda.begin(), Agenda.end(), Sorter_Name);
 }

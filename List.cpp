@@ -7,7 +7,7 @@
 
 struct{
     bool operator()(Activity a, Activity b){
-        return a.getName_activity()<b.getName_activity();
+        return a.getNameActivity()<b.getNameActivity();
     }
 }Sorter_Name;
 
@@ -32,27 +32,27 @@ List::~List()
 void List::addActivity(string name)
 {
     Activity new_activity;
-    new_activity.setName_activity(name);
-    Activities.push_back(new_activity);
+    new_activity.setNameActivity(name);
+    activities.push_back(new_activity);
 
 }
 
 void List::deleteActivity(string name)
 {
     vector<Activity>::iterator i;
-    for(i= Activities.begin(); i!= Activities.end(); i++){
-        if(name==i->getName_activity()){
-            Activities.erase(Activities.begin()-(i-Activities.begin()));
+    for(i= activities.begin(); i!= activities.end(); i++){
+        if(name==i->getNameActivity()){
+            activities.erase(activities.begin()-(i-activities.begin()));
             return;
         }
 
-     }
+    }
 
 }
 
-void List::show_endedActivity()
+void List::showEndedActivity()
 {
-   /* vector<Activity>::iterator i;
+    /* vector<Activity>::iterator i;
     for(i= Activities.begin(); i!= Activities.end(); i++){
         if(
             printf("The activity is end");
@@ -62,40 +62,40 @@ void List::show_endedActivity()
     }return;*/
 }
 
-void List::show_importantActivity()
+void List::showImportantActivity()
 {
 
 }
 
-void List::sortActivity_name()
+void List::sortActivityName()
 {
-    std::sort(Activities.begin(), Activities.end(), Sorter_Name);
+    std::sort(activities.begin(), activities.end(), Sorter_Name);
 }
 
-void List::sortActivity_date()
+void List::sortActivityDate()
 {
-    std::sort(Activities.begin(), Activities.end(), Sorter_Date);
+    std::sort(activities.begin(), activities.end(), Sorter_Date);
 }
 
-Activity* List::src_Activity(string name)
+Activity* List::searchActivity(string name)
 {
     vector<Activity>::iterator i;
-    for(i=Activities.begin(); i!=Activities.end(); i++){
-        if(name==i->getName_activity()){
+    for(i=activities.begin(); i!=activities.end(); i++){
+        if(name==i->getNameActivity()){
             return &(*i);
-                   }
+        }
     }
     return NULL;
 
 
 }
 
-string List::getName_list() const
+string List::getNameList() const
 {
-    return name_list;
+    return nameList;
 }
 
-void List::setName_list(const string &value)
+void List::setNameList(const string &value)
 {
-    name_list = value;
+    nameList = value;
 }

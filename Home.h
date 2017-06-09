@@ -16,14 +16,14 @@ public:
     Home();
     ~Home();
 
-    vector<List> Vector_List;
+    vector<List> Agenda;
 
 
 
     void addList(string);
     void deleteList(string);
     List* searchList(string);
-    void orderList_name();
+    void orderListName();
 
 };
 

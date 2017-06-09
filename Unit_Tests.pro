@@ -26,13 +26,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 
-SOURCES += Unit_Tests.cpp \
+SOURCES += \
     Activity.cpp \
     Date.cpp \
     Home.cpp \
     List.cpp \
     Person.cpp \
-    Sub_Activity.cpp
+    SubActivity.cpp \
+    UnitTests.cpp
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
 HEADERS += \
@@ -41,4 +42,4 @@ HEADERS += \
     Home.h \
     List.h \
     Person.h \
-    Sub_Activity.h
+    SubActivity.h
