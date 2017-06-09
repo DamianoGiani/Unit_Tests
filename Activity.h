@@ -4,13 +4,13 @@
 #include <vector>
 #include <string>
 #include <Date.h>
-#include <SubActivity.h>
+#include <Sub_Activity.h>
 
 class Activity
 {
 public:
 
-    vector<SubActivity> subActivities;
+    vector<Sub_Activity> subActivities;
     vector<Person> personIncl;
     Activity();
     ~Activity();

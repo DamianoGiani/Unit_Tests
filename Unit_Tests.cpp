@@ -18,7 +18,7 @@ public:
 
 
 private Q_SLOTS:
-    void Test_addPerson_incl();
+    void Test_addPerson_incl();//Activity
     void Test_removePerson_incl();
     void Test_add_subActivity();
     void Test_delete_subActivity();
@@ -35,7 +35,7 @@ private Q_SLOTS:
     void Test_src_Activity();
 
 
-    void Test_setDate();
+    void Test_setDate();//Date
     void Test_DataComp();
 
 };
@@ -46,17 +46,17 @@ Unit_TestsTest::Unit_TestsTest(){
 
 
 
-void Unit_TestsTest::Test_addPerson_incl(){
+void Unit_TestsTest::Test_addPerson_incl(){ //Activity
 
     Person a;
     Person b;
     Activity Act;
     a.setName("Luigi");
     b.setName("Filippo");
-    Act.addPerson_incl("Luigi");
-    Act.addPerson_incl("Filippo");
+    Act.addPerson("Luigi");
+    Act.addPerson("Filippo");
     int size;
-    size=Act.Person_incl.size();
+    size=Act.personIncl.size();
 
     QCOMPARE(2,size);
 }
@@ -67,11 +67,11 @@ void Unit_TestsTest::Test_removePerson_incl(){
     Activity Act;
     a.setName("Luigi");
     b.setName("Filippo");
-    Act.addPerson_incl("Luigi");
-    Act.addPerson_incl("Filippo");
-    Act.removePerson_incl("Luigi");
+    Act.addPerson("Luigi");
+    Act.addPerson("Filippo");
+    Act.removePerson("Luigi");
     int size;
-    size=Act.Person_incl.size();
+    size=Act.personIncl.size();
     QCOMPARE(1,size);
 
 }
@@ -82,12 +82,12 @@ void Unit_TestsTest::Test_add_subActivity(){
     Sub_Activity a;
     Sub_Activity b;
     Activity Act;
-    a.setName_subActivity("Doccia");
-    b.setName_subActivity("calcio");
-    Act.add_subActivity("Doccia");
-    Act.add_subActivity("calcio");
+    a.setNameSubActivity("Doccia");
+    b.setNameSubActivity("calcio");
+    Act.addSubActivity("Doccia");
+    Act.addSubActivity("calcio");
     int size;
-    size= Act.Sub_Activities.size();
+    size= Act.subActivities.size();
     QCOMPARE(2,size);
 }
 
@@ -95,53 +95,53 @@ void Unit_TestsTest::Test_delete_subActivity(){
     Sub_Activity a;
     Sub_Activity b;
     Activity Act;
-    a.setName_subActivity("Doccia");
-    b.setName_subActivity("calcio");
-    Act.add_subActivity("Doccia");
-    Act.add_subActivity("calcio");
-    Act.delete_subActivity("Doccia");
+    a.setNameSubActivity("Doccia");
+    b.setNameSubActivity("calcio");
+    Act.addSubActivity("Doccia");
+    Act.addSubActivity("calcio");
+    Act.deleteSubActivity("Doccia");
     int size;
-    size= Act.Sub_Activities.size();
+    size= Act.subActivities.size();
     QCOMPARE(1,size);
 }
 
-void Unit_TestsTest::Test_addList(){
+void Unit_TestsTest::Test_addList(){ //Home
     List a;
     List b;
     Home Hm;
-    a.setName_list("Lavoro");
-    b.setName_list("Casa");
+    a.setNameList("Lavoro");
+    b.setNameList("Casa");
     Hm.addList("Lavoro");
     Hm.addList("Casa");
     int size;
-    size=Hm.Vector_List.size();
+    size=Hm.Agenda.size();
     QCOMPARE(2,size);
 }
 void Unit_TestsTest::Test_deleteList(){
     List a;
     List b;
     Home Hm;
-    a.setName_list("Lavoro");
-    b.setName_list("Casa");
+    a.setNameList("Lavoro");
+    b.setNameList("Casa");
     Hm.addList("Lavoro");
     Hm.addList("Casa");
     Hm.deleteList("Lavoro");
     int size;
-    size=Hm.Vector_List.size();
+    size=Hm.Agenda.size();
     QCOMPARE(1,size);
 }
 
 void Unit_TestsTest::Test_searchList(){
     List a;
     List b;
-    a.setName_list("Casa");
-    b.setName_list("Lavoro");
+    a.setNameList("Casa");
+    b.setNameList("Lavoro");
     Home Hm;
     Hm.addList("Casa");
     Hm.addList("Lavoro");
     string lst;
-    lst=Hm.searchList("Casa")->getName_list();
-    QCOMPARE(a.getName_list(),lst);
+    lst=Hm.searchList("Casa")->getNameList();
+    QCOMPARE(a.getNameList(),lst);
 
 }
 
@@ -151,38 +151,38 @@ void Unit_TestsTest::Test_orderList_name(){
     List b;
     List c;
     bool correct;
-    a.setName_list("Casa");
-    b.setName_list("Lavoro");
-    c.setName_list("Chiesa");
+    a.setNameList("Casa");
+    b.setNameList("Lavoro");
+    c.setNameList("Chiesa");
     Home Hm;
     Hm.addList("Casa");
     Hm.addList("Lavoro");
     Hm.addList("Chiesa");
-    Hm.orderList_name();
-    if(Hm.Vector_List.begin() < (Hm.Vector_List.begin()+1) && (Hm.Vector_List.begin()+1) < (Hm.Vector_List.begin()+2))
+    Hm.orderListName();
+    if(Hm.Agenda.begin() < (Hm.Agenda.begin()+1) && (Hm.Agenda.begin()+1) < (Hm.Agenda.begin()+2))
         correct=true;
     else
         correct=false;
     QVERIFY(correct);
 }
 
-    /*string second=(Hm.Vector_List.begin()+1)->getName_list();
+/*string second=(Hm.Vector_List.begin()+1)->getName_list();
     string first=(Hm.Vector_List.begin()->getName_list();
     QCOMPARE(first,c.getName_list());
     QCOMPARE(second,b.getName_list());
 }*/
 
 
-void Unit_TestsTest::Test_addActivity(){
+void Unit_TestsTest::Test_addActivity(){ //List
     Activity a;
     Activity b;
     List Lst;
-    a.setName_activity("Giardinaggio");
-    b.setName_activity("Vacanza");
+    a.setNameActivity("Giardinaggio");
+    b.setNameActivity("Vacanza");
     Lst.addActivity("Giardinaggio");
     Lst.addActivity("Vacanza");
     int size;
-    size=Lst.Activities.size();
+    size=Lst.activities.size();
     QCOMPARE(2,size);
 }
 
@@ -191,13 +191,13 @@ void Unit_TestsTest::Test_deleteActivity(){
     Activity a;
     Activity b;
     List Lst;
-    a.setName_activity("Giardinaggio");
-    b.setName_activity("Vacanza");
+    a.setNameActivity("Giardinaggio");
+    b.setNameActivity("Vacanza");
     Lst.addActivity("Giardinaggio");
     Lst.addActivity("Vacanza");
     int size;
     Lst.deleteActivity("Giardinaggio");
-    size=Lst.Activities.size();
+    size=Lst.activities.size();
     QCOMPARE(1,size);
 }
 
@@ -208,14 +208,14 @@ void Unit_TestsTest:: Test_sortActivity_name(){
     Activity c;
     bool correct;
     List lst;
-    a.setName_activity("Lavare");
-    b.setName_activity("Giardino");
-    c.setName_activity("Mangiare");
+    a.setNameActivity("Lavare");
+    b.setNameActivity("Giardino");
+    c.setNameActivity("Mangiare");
     lst.addActivity("Giardino");
     lst.addActivity("Lavare");
     lst.addActivity("Mangiare");
-    lst.sortActivity_name();
-    if(lst.Activities.begin() < (lst.Activities.begin()+1) && (lst.Activities.begin()+1) < (lst.Activities.begin()+2))
+    lst.sortActivityName();
+    if(lst.activities.begin() < (lst.activities.begin()+1) && (lst.activities.begin()+1) < (lst.activities.begin()+2))
         correct=true;
     else
         correct=false;
@@ -234,23 +234,23 @@ void Unit_TestsTest::Test_sortActivity_date(){
     Activity c;
     List Lst;
     bool correct;
-    a.setName_activity("Casa");
-    b.setName_activity("Lavoro");
-    c.setName_activity("Chiesa");
+    a.setNameActivity("Casa");
+    b.setNameActivity("Lavoro");
+    c.setNameActivity("Chiesa");
     a.setExpiration(1,2,2000);
     b.setExpiration(2,2,2000);
     c.setExpiration(3,2,2000);
     Lst.addActivity("Casa");
     Lst.addActivity("Lavoro");
     Lst.addActivity("Chiesa");
-    Lst.sortActivity_date();
+    Lst.sortActivityDate();
 
-    if(Lst.Activities.begin() < (Lst.Activities.begin()+1) && (Lst.Activities.begin()+1) < (Lst.Activities.begin()+2))
+    if(Lst.activities.begin() < (Lst.activities.begin()+1) && (Lst.activities.begin()+1) < (Lst.activities.begin()+2))
         correct=true;
     else
         correct=false;
     QVERIFY(correct);
-   // string lst=Lst.Activities.begin()->getName_activity();
+    // string lst=Lst.Activities.begin()->getName_activity();
     //QCOMPARE(lst,a.getName_activity());
 }
 
@@ -258,17 +258,17 @@ void Unit_TestsTest::Test_src_Activity(){
     Activity a;
     Activity b;
     List Lst;
-    a.setName_activity("Calcetto");
-    b.setName_activity("Lavoro");
+    a.setNameActivity("Calcetto");
+    b.setNameActivity("Lavoro");
     Lst.addActivity("Calcetto");
     Lst.addActivity("Lavoro");
     string lst;
-    lst=Lst.src_Activity("Calcetto")->getName_activity();
-    QCOMPARE(lst,a.getName_activity());
+    lst=Lst.searchActivity("Calcetto")->getNameActivity();
+    QCOMPARE(lst,a.getNameActivity());
 }
 
 
-void Unit_TestsTest::Test_setDate(){
+void Unit_TestsTest::Test_setDate(){ //Date
     Date a;
     bool correct;
     a.setDate(1,1,2000);

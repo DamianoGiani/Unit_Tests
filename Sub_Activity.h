@@ -16,14 +16,14 @@ class Sub_Activity
 public:
     Sub_Activity();
     ~Sub_Activity();
-    string getName_subActivity() const;
-    void setName_subActivity(const string &value);
+    string getNameSubActivity() const;
+    void setNameSubActivity(const string &value);
 
 
 
 
 private:
-    string name_subActivity;
+    string nameSubActivity;
 
 };
 

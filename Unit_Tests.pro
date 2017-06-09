@@ -32,8 +32,8 @@ SOURCES += \
     Home.cpp \
     List.cpp \
     Person.cpp \
-    SubActivity.cpp \
-    UnitTests.cpp
+    Sub_Activity.cpp \
+    Unit_Tests.cpp
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
 HEADERS += \
@@ -42,4 +42,4 @@ HEADERS += \
     Home.h \
     List.h \
     Person.h \
-    SubActivity.h
+    Sub_Activity.h

@@ -12,12 +12,12 @@ Sub_Activity::~Sub_Activity()
 
 }
 
-    string Sub_Activity::getName_subActivity() const
+string Sub_Activity::getNameSubActivity() const
 {
-    return name_subActivity;
+    return nameSubActivity;
 }
 
-void Sub_Activity::setName_subActivity(const string &value)
+void Sub_Activity::setNameSubActivity(const string &value)
 {
-    name_subActivity = value;
+    nameSubActivity = value;
 }

@@ -1,6 +1,6 @@
 #include "Activity.h"
 #include "Person.h"
-#include "SubActivity.h"
+#include "Sub_Activity.h"
 
 Activity::Activity()
 {
@@ -87,7 +87,7 @@ void Activity::setExpiration(int d, int m, int y)
 
 void Activity::addSubActivity(string name)
 {
-    SubActivity new_SubAct;
+    Sub_Activity new_SubAct;
     new_SubAct.setNameSubActivity(name);
     subActivities.push_back(new_SubAct);
 
@@ -95,7 +95,7 @@ void Activity::addSubActivity(string name)
 
 void Activity::deleteSubActivity(string name)
 {
-    vector<SubActivity>::iterator i;
+    vector<Sub_Activity>::iterator i;
 
     for(i= subActivities.begin(); i!= subActivities.end(); i++){
         if(name==i->getNameSubActivity()){
