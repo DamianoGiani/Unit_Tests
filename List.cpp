@@ -1,7 +1,7 @@
 #include "List.h"
 #include "Activity.h"
 #include "Person.h"
-#include "Date.h"
+#include <QDate>
 #include "algorithm"
 #include "QList"
 

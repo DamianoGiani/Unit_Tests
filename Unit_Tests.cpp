@@ -3,7 +3,7 @@
 #include "stdio.h"
 #include <iostream>
 #include "Activity.h"
-#include "Date.h"
+#include <QDate>
 #include "List.h"
 #include "Home.h"
 #include "Person.h"
@@ -36,7 +36,7 @@ private Q_SLOTS:
 
 
     void Test_setDate();//Date
-    void Test_DataComp();
+    void Test_leapyear();
 
 };
 
@@ -269,11 +269,11 @@ void Unit_TestsTest::Test_src_Activity(){
 
 
 void Unit_TestsTest::Test_setDate(){ //Date
-    Date a;
+    QDate a;
     bool correct;
-    a.setDate(1,1,2000);
+    a.setDate(2000,1,1);
 
-    if(a.getDay()==1 && a.getMonth()==1 && a.getYear()==2000)
+    if(a.day()==1 && a.month()==1 && a.year()==2000)
         correct=true;
     else
         correct=false;
@@ -281,13 +281,11 @@ void Unit_TestsTest::Test_setDate(){ //Date
 }
 
 
-void Unit_TestsTest::Test_DataComp(){
-    Date a;
-    Date b;
+void Unit_TestsTest::Test_leapyear(){
+    QDate a;
     bool correct;
-    a.setDate(1,1,2000);
-    b.setDate(2,1,2000);
-    if(a<b)
+    a.setDate(2016,1,1);
+    if(a.isLeapYear(a.year()))
         correct=true;
     else
         correct=false;

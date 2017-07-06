@@ -28,7 +28,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     Activity.cpp \
-    Date.cpp \
     Home.cpp \
     List.cpp \
     Person.cpp \
@@ -38,7 +37,6 @@ DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
 HEADERS += \
     Activity.h \
-    Date.h \
     Home.h \
     List.h \
     Person.h \

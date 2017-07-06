@@ -1,7 +1,7 @@
 #include "Home.h"
 #include <string>
 #include "Activity.h"
-#include "Date.h"
+#include <QDate>
 #include "Person.h"
 #include "algorithm"
 #include "QList"

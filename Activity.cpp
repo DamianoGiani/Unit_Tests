@@ -74,7 +74,7 @@ void Activity::setImportant(bool value)
     important = value;
 }
 
-Date Activity::getExpiration() const
+QDate Activity::getExpiration() const
 {
     return expiration;
 }

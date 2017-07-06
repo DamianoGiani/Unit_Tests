@@ -3,7 +3,7 @@
 #include "Person.h"
 #include <vector>
 #include <string>
-#include <Date.h>
+#include <QDate>
 #include <Sub_Activity.h>
 
 class Activity
@@ -34,14 +34,14 @@ public:
     bool getImportant() const;
     void setImportant(bool value);
 
-    Date getExpiration() const;
+    QDate getExpiration() const;
     void setExpiration(int,int,int);
 
 private:
     bool important;
     bool complete;
     string descriprion;
-    Date expiration;
+    QDate expiration;
     string nameActivity;
 
 
